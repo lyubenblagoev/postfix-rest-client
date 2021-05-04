@@ -1,0 +1,20 @@
+div.bread-crumb-wrapper {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    padding: 3px 0;
+}
+
+div.bread-crumb {
+    text-transform: lowercase;
+    font-weight: 400;
+    display: inline-block;
+    font-size: 0.95em;
+}
+
+div.bread-crumb > span {
+    color: #888;
+}
+
+div.bread-crumb > a {
+    text-decoration: none;
+}

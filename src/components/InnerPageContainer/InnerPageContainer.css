@@ -1,0 +1,141 @@
+.inner-page-header {
+    background-color: #fff;
+    border-bottom: 1px solid #fd5a19;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.inner-page-header > .logo {
+    min-width: 260px;
+    height: 100%;
+    background-color: #fd5a19;
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.inner-page-header > .logo > .fa-users {
+    margin: 0 5px 0 0;
+}
+
+.inner-page-header > nav > ul {
+    margin: 0;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.inner-page-header > nav > ul > a {
+    color: #fd5a19;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.inner-page-header > nav > ul > a > li {
+    display: inline-block;
+    padding: 18px 20px;
+    margin: 0;
+    height: 100%;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.inner-page-header > nav > ul > a > li:hover {
+    background-color: #fd5a19;
+    color: white;
+}
+
+.inner-page-header > nav > ul > a.active > li {
+    border-bottom: 4px solid #fd5a19;
+}
+
+.inner-page-header > .sidebar-toggle-button {
+    display: none;
+}
+
+.inner-page-content {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 5px;
+    height: calc(100% - 64px);
+}
+
+.inner-page-content a {
+    color: #fd5a19;
+}
+
+@media (max-width: 870px) {
+    .inner-page-header {
+        display: block;
+        position: fixed;
+        width: 100%;
+    }
+
+    .inner-page-header > .logo > .fa-users {
+        display: none;
+    }
+
+    .inner-page-content {
+        margin-top: 74px;
+        height: calc(100% - 74px);
+    }
+
+    .inner-page-header > nav {
+        display: none;
+    }
+
+    .inner-page-header > nav.open {
+        display: block;
+        border-top: 1px solid #fd5a19;
+        background-color: white;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 64px);
+        overflow-y: auto;
+    }
+
+    .inner-page-header > nav > ul {
+        padding: 0;
+    }
+
+    .inner-page-header > nav > ul > a > li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .inner-page-header > nav > ul > a.active > li {
+        border-bottom: none;
+        color: black;
+    }
+
+    .inner-page-header > nav > ul > a {
+        display: block;
+    }
+
+    .inner-page-header > .sidebar-toggle-button {
+        display: block;
+        position: absolute;
+        /* right: 15px; */
+        margin-left: 15px;
+        top: 18px;
+    }
+
+    .inner-page-header > .logo {
+        min-width: 260px;
+        background-color: white;
+        color: #fd5a19;
+        font-size: 1.1em;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        margin: 0;
+    }
+}

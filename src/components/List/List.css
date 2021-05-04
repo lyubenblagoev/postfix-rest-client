@@ -1,0 +1,29 @@
+ul.item-list {
+    font-weight: 400;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.item-list > a {
+    color:rgba(66, 32, 32, 0.85);
+    text-decoration: none;
+}
+
+ul.item-list > a > li {
+    padding: 10px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+ul.item-list > a:last-of-type > li {
+    border-bottom: none;
+}
+
+ul.item-list > a > li:hover {
+    background-color: #fd5a196e;
+    cursor: pointer;
+}
+
+li.disabled {
+    color:rgba(66, 32, 32, 0.4);
+}

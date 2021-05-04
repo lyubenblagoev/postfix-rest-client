@@ -1,0 +1,68 @@
+.notifications-container-wrapper {
+    position: fixed;
+    width: inherit;
+    max-width: inherit;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.notifications-container {
+    position: relative;
+    border: 1px solid #fd5a1969;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 10px 5px;
+    margin-bottom: 5px;
+}
+
+.notifications-container.info {
+    background-color: rgb(0, 182, 0);
+    border: 1px solid rgb(0, 97, 0);
+    color: white;
+}
+
+.notifications-container.warn {
+    background-color: #ffdbb1;
+    color: #fd5a19;
+}
+
+.notifications-container.error {
+    background-color: #fd5a19;
+    border: 1px solid #c73800;
+    color: white;
+}
+
+.notifications-container .close-button {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    width: 15px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.notifications-container .close-button .close-button1 {
+    height: 14px;
+    width: 2px;
+    margin-left: 6px;
+    background-color: #fd5a19;
+    transform: rotate(45deg);
+}
+
+.notifications-container .close-button .close-button2 {
+    height: 14px;
+    width: 2px;
+    background-color: #fd5a19;
+    transform: rotate(90deg);
+}
+
+.notifications-container.info .close-button .close-button1,
+.notifications-container.info .close-button .close-button2 {
+    background-color: white;
+}
+
+.notifications-container.error .close-button .close-button1,
+.notifications-container.error .close-button .close-button2 {
+    background-color: white;
+}

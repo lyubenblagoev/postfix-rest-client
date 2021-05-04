@@ -1,0 +1,10 @@
+.sidebar-toggle-button {
+    cursor: pointer;
+}
+
+.sidebar-toggle-button > div {
+    width: 25px;
+    height: 3px;
+    background-color: #fd5a19;
+    margin: 4px;
+}

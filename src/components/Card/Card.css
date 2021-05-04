@@ -1,0 +1,58 @@
+.card {
+    background-color: #fff;
+    padding: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 1px #eee;
+}
+
+.card > *:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.card > h1,
+.card > h2,
+.card > h3,
+.card > h3 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+    .flex-container > .card:not(:last-child) {
+        flex: auto;
+        margin-right: 20px;
+    }
+
+    .flex-container > .card:last-child {
+        display: flex;
+        flex-direction: column;
+        height: min-content;
+    }
+
+    .flex-container > .card:last-child > .button-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-container > .card:last-child > .button-group > .button {
+        display: block;
+        margin: 0;
+    }
+
+    .flex-container > .card:last-child > .button-group > .button:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card .button-group {
+        display: flex;
+        flex-direction: column;
+    }
+}

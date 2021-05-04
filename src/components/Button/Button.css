@@ -1,0 +1,45 @@
+button {
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button {
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
+    background-color: #eee;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.button.important-btn {
+    color: white;
+    background-color: #fd5a19;
+    display: inline-block;
+    border: 1px solid #fd5a19;
+}
+
+.button:hover {
+    border-bottom: 1px solid #fd5a19;
+    background-color: #fafafa;
+}
+
+.button.important-btn:hover {
+    color: black;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #fd5a19;
+}
+
+@media (max-width: 500px) {
+    .button:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 501px) {
+    .button:not(:last-child) {
+        margin-right: 10px;
+    }
+}

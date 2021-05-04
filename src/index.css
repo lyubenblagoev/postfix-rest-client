@@ -1,13 +1,126 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;300;400;500&display=swap");
+
+* {
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+div#root {
+    height: 100%;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+}
+
+form div {
+    white-space: nowrap;
+    display: flex;
+    line-height: 28px;
+    vertical-align: middle;
+}
+
+form div.button-group {
+    margin-top: 40px;
+}
+
+form input,
+form textarea {
+    box-sizing: border-box;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    outline: none;
+}
+
+form textarea {
+    font-family: inherit;
+    font-size: inherit;
+    resize: vertical;
+}
+
+@media (max-width: 500px) {
+    form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form textarea {
+        width: 100%;
+    }
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-bottom: 1px solid #fd5a19;
+}
+
+form label {
+    display: block;
+    line-height: 1.5em;
+    margin-bottom: 3px;
+}
+
+form > label:not(:first-child) {
+    margin-top: 35px;
+}
+
+fieldset {
+    border: 1px solid #e4e4e4;
+    margin: 20px 0;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.important {
+    color: #fd5a19;
+    font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .flex-container > *:last-child {
+        min-width: 260px;
+        width: 25%;
+    }
 }

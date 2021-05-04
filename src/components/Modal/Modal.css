@@ -1,0 +1,21 @@
+.modal {
+    position: fixed;
+    max-width: 700px;
+    width: 70%;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 500;
+    background-color: white;
+    border: 1px solid #fd5a19;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    padding: 16px;
+}
+
+@media (max-width: 500px) {
+    .modal {
+        width: 95%;
+        text-align: center;
+    }
+}

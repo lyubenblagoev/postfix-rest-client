@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Switch, Route, useParams, useRouteMatch, useHistory } from 'react-router-dom';
 import TextareaAutosize from 'react-textarea-autosize';
-import { AliasesList, Button, DateTime, DomainsList } from '../../components';
+import { AliasesList, Button, DateTime } from '../../components';
 import * as aliasesService from '../../api/aliasesService';
 import InnerPageContainer from '../../components/InnerPageContainer/InnerPageContainer';
 import Modal from '../../components/Modal/Modal';

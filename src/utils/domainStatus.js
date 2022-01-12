@@ -24,7 +24,7 @@ const withDomainStatusWarning = (Component) => {
                     handleError(e, error, logOut)
                 }
             })();
-        }, [params.domainName, warn]);
+        }, [error, params.domainName, warn]);
 
         return <Component {...props} />;
     };

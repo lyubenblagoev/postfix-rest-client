@@ -16,6 +16,14 @@ const AuthProvider = (props) => {
         localStorage.removeItem(configuration.authUserKey);
     }, [setAuthenticated]);
 
+    const initAuthenticationState = useCallback((username, token, refreshToken) => {
+        localStorage.setItem(configuration.authTokenKey, token);
+        localStorage.setItem(configuration.authUserKey, username);
+        localStorage.setItem(configuration.refreshTokenKey, refreshToken)
+        setLoggedInUser(username);
+        setAuthenticated(true);
+    }, [setLoggedInUser, setAuthenticated]);
+    
     const logIn = useCallback(async (username, password) => {
         try {
             const { token, refreshToken } = await userLogIn(username, password);
@@ -24,7 +32,7 @@ const AuthProvider = (props) => {
             clearAuthenticationState()
             throw e;
         }
-    }, []);
+    }, [clearAuthenticationState, initAuthenticationState]);
 
     const logOut = useCallback(async () => {
         try {
@@ -36,14 +44,6 @@ const AuthProvider = (props) => {
         }
         clearAuthenticationState();
     }, [authenticated, loggedInUser, clearAuthenticationState]);
-
-    const initAuthenticationState = useCallback((username, token, refreshToken) => {
-        localStorage.setItem(configuration.authTokenKey, token);
-        localStorage.setItem(configuration.authUserKey, username);
-        localStorage.setItem(configuration.refreshTokenKey, refreshToken)
-        setLoggedInUser(username);
-        setAuthenticated(true);
-    }, [setLoggedInUser, setAuthenticated]);
 
     return (
         <AuthContext.Provider value={{ isAuthenticated: authenticated, loggedInUser, logIn, logOut }}>

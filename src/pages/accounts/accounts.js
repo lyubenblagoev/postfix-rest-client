@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route, useParams, useRouteMatch, useHistory, Link } from 'react-router-dom';
-import { AccountsList, Button, DateTime, DomainsList } from '../../components';
+import { Switch, Route, useParams, useRouteMatch, useHistory } from 'react-router-dom';
+import { AccountsList, Button, DateTime } from '../../components';
 import * as accountService from '../../api/accountService';
 import InnerPageContainer from '../../components/InnerPageContainer/InnerPageContainer';
 import Modal from '../../components/Modal/Modal';

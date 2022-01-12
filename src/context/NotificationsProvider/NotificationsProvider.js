@@ -10,7 +10,7 @@ const NotificationsProvider = (props) => {
             notifications.forEach(n => n.clear());
             setNotifications([]);
         }
-    }, []);
+    }, [notifications]);
 
     const notify = useCallback((message, type) => {
         const notification = {
@@ -26,7 +26,7 @@ const NotificationsProvider = (props) => {
         setTimeout(() => {
             setNotifications(notifications => notifications.filter(n => n !== notification));
         }, timeout);
-    }, []);
+    }, [timeout]);
 
     const info = useCallback((message) => notify(message, "info"), [notify]);
     const warn = useCallback((message) => notify(message, "warn"), [notify]);

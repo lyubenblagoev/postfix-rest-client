@@ -9,6 +9,13 @@ const AuthProvider = (props) => {
     const [authenticated, setAuthenticated] = useState(localStorage.getItem(configuration.authTokenKey) !== null);
     const [loggedInUser, setLoggedInUser] = useState(localStorage.getItem(configuration.authUserKey));
 
+    const clearAuthenticationState = useCallback(() => {
+        setAuthenticated(false);
+        localStorage.removeItem(configuration.authTokenKey);
+        localStorage.removeItem(configuration.refreshTokenKey);
+        localStorage.removeItem(configuration.authUserKey);
+    }, [setAuthenticated]);
+
     const logIn = useCallback(async (username, password) => {
         try {
             const { token, refreshToken } = await userLogIn(username, password);
@@ -28,7 +35,7 @@ const AuthProvider = (props) => {
         } catch (e) {
         }
         clearAuthenticationState();
-    }, []);
+    }, [authenticated, loggedInUser, clearAuthenticationState]);
 
     const initAuthenticationState = useCallback((username, token, refreshToken) => {
         localStorage.setItem(configuration.authTokenKey, token);
@@ -36,14 +43,7 @@ const AuthProvider = (props) => {
         localStorage.setItem(configuration.refreshTokenKey, refreshToken)
         setLoggedInUser(username);
         setAuthenticated(true);
-    }, []);
-
-    const clearAuthenticationState = useCallback(() => {
-        setAuthenticated(false);
-        localStorage.removeItem(configuration.authTokenKey);
-        localStorage.removeItem(configuration.refreshTokenKey);
-        localStorage.removeItem(configuration.authUserKey);
-    }, []);
+    }, [setLoggedInUser, setAuthenticated]);
 
     return (
         <AuthContext.Provider value={{ isAuthenticated: authenticated, loggedInUser, logIn, logOut }}>

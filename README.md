@@ -4,26 +4,27 @@ A web UI for controlling the [Postfix REST Server](https://github.com/lyubenblag
 
 Built with React, React Router and Axios.
 
-Set `REACT_APP_BACKEND_API_BASE_URL` (in `.env` or command line) to the base URL of the Postfix REST Server before running the app in development mode or building the app for production use. By default, it points to `localhost:8080`.
+![Screens](./screens/screens.png)
 
-## Available Scripts
+## Initial setup
 
-In the project directory, you can run:
+```bash
+git clone git@github.com:lyubenblagoev/postfix-rest-client.git
+cd postfix-rest-client
 
-### `npm start`
+# Install dependencies
+npm install
 
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Start the frontend
+npm start
+```
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+## Starting the backend
 
-### `npm run build`
+In order to use the Postfix Control Panel you need to clone and start the backend project.
 
-Builds the app for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow the instructions at [https://github.com/lyubenblagoev/postfix-rest-server#rest-server-for-postfix](https://github.com/lyubenblagoev/postfix-rest-server#rest-server-for-postfix)
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+## Building for production
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run `npm run build` to build the project. The build artifacts will be stored in the `build/` directory.
